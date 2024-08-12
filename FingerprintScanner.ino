@@ -5,12 +5,12 @@ boolean operate_state = false; // 운영 상태를 나타내는 boolean 변수�
 SoftwareSerial mySerial(2, 3); // SoftwareSerial 객체를 생성하여 이름을 mySerial로 설정 - 2번 핀을 RX, 3번 핀을 TX로 사용
 int temp = 0; // 임시로 사용할 정수형 변수를 0으로 선언
 
-Adafruit_Fingerprint finger = Adafruit_Fingerprint(&mySerial); // 지문 인식 센서를 제어하기 위해 Adafruit_Fingerprint 객체 생성, mySerial을 통해 통신
+Adafruit_Fingerprint finger = Adafruit_Fingerprint(&mySerial); // 지문 인식 센서를 제어하기 위해 Adafruit_Fingerprint 객체 생성 - mySerial을 통해 통신
 
 void setup()  
 {
   Serial.begin(9600); // 기본 시리얼 통신 속도를 9600bps로 설정
-  while (!Serial);  // Serial 포트가 준비될 때까지 대기 (Yun/Leo/Micro/Zero 보드에서 사용)
+  while (!Serial);  // Serial 포트가 준비될 때까지 대기
   delay(100); // 100ms 지연
   Serial.println("\n\nAdafruit finger detect test"); // 시작 메세지를 시리얼 모니터에 출력
 
